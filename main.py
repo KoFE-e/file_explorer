@@ -5,7 +5,7 @@ import subprocess
 import platform
 from PyQt6.QtWidgets import (
     QApplication, QMainWindow, QVBoxLayout, QWidget,
-    QTreeView, QSplitter, QMessageBox, QInputDialog, QToolBar
+    QTreeView, QSplitter, QMessageBox, QInputDialog, QToolBar, QStyle
 )
 from PyQt6.QtGui import QFileSystemModel, QAction, QIcon
 from PyQt6.QtCore import Qt
@@ -15,6 +15,7 @@ class FileManager(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("File Explorer")
+        self.setWindowIcon(self.style().standardIcon(QStyle.StandardPixmap.SP_DialogSaveButton))
         self.setGeometry(100, 100, 1200, 600)
 
         # Основной виджет
